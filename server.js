@@ -17,9 +17,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // =============================================================
+// Expose the public directory to access the image 
+// =============================================================
+app.use(express.static(path.join(__dirname, './app/public')));
+
+// =============================================================
 // Require the routing modules
 // =============================================================
-require(path.join(__dirname, './app/routing/apiRoutes'))(app);
+require(path.join(__dirname, './app/routing/apiRoutes'))(app);  // tested successfully to return the friends json file
+require(path.join(__dirname, './app/routing/htmlRoutes'))(app);  // tested successfully to return the home html file.
 
 // =============================================================
 // Start the server to begin listening
