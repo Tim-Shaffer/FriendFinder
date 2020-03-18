@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
         <title>Tim Shaffer | Friend Finder Survey</title>
+
+        <!-- Added link to the jQuery Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
         <!-- Link for Bootstrap Styling -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -25,13 +28,21 @@
                 <h3>Survey Questions</h3>
                 
                 <hr class="my-4">
+
+                <h4>Name (Required)</h4>
+                <input type="text" id="name" class="form-control" required>
+            
+                <h4>Link to Photo Image (Required)</h4>
+                <input type="text" id="photo" class="form-control" required>
+            
+                <hr>
                 
-                <form class="form-inline justify-content-center">
+                <!-- <form class="form-inline justify-content-center"> -->
                     
                 
-                    <button type="button" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="submit_btn">Submit</button>
                 
-                </form>
+                <!-- </form> -->
 
             </div>
 
@@ -56,10 +67,63 @@
                 
             </div>
 
-        </div>
-
-        
+        </div>    
     
     </body>
+
+    <script type="text/javascript">
+    
+        // Capture the inputs
+        $("#submit_btn").on("click", function(event) {
+          event.preventDefault();
+    
+          // Form validation
+          function validateForm() {
+            var isValid = true;
+            $(".form-control").each(function() {
+              if ($(this).val() === "") {
+                isValid = false;
+              }
+            });
+
+            return isValid;
+          
+          }
+    
+          // If all required fields are filled
+          if (validateForm()) {
+            // Create an object for the user"s data
+            var newFriend = {
+              name: $("#name").val(),
+              photo: $("#photo").val(),
+              scores: [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ]
+            };
+
+            console.log(newFriend);
+    
+            // AJAX post the data to the friends API.
+            $.post("/api/friends", newFriend, function(data) {
+    
+              console.log("Data returned is:  " + data)
+    
+            });
+
+          } else {
+            alert("Please fill out all fields before submitting!");
+          }
+        });
+        
+      </script>
 
 </html>
