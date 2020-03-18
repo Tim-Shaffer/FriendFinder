@@ -13,9 +13,8 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, '../public/survey.html'));
     });
 
-
-    // A default, catch-all route that leads to home.html which displays the home page.
-    app.get('/', function(req, res) {
+    // Any other route will drop to this default, catch-all route, that leads to home.html which displays the home page.
+    app.use(function(req, res) {
         res.sendFile(path.join(__dirname, '../public/home.html'));
     });
 

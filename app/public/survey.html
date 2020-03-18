@@ -110,14 +110,16 @@
               ]
             };
 
-            console.log(newFriend);
-    
             // AJAX post the data to the friends API.
-            $.post("/api/friends", newFriend, function(data) {
+            $.post("/api/friends", newFriend, 
+            
+              function(data) {
     
-              console.log("Data returned is:  " + data)
+                console.log("Data returned is:  " + JSON.stringify(data))
     
-            });
+              }
+
+            );
 
           } else {
             alert("Please fill out all fields before submitting!");

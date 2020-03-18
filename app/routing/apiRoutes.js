@@ -18,11 +18,13 @@ module.exports = function(app) {
     app.post("/api/friends", function(req, res) {
 
         var newFriend = req.body;
-
-        console.log(newFriend);
     
         friends.push(newFriend);
+
+        // test what has been entered and passed to the post!
+        console.log(newFriend);
     
+        // respond with the same data that was passed to make sure the AJAX call gets the data correctly.
         res.json(newFriend);
 
     });

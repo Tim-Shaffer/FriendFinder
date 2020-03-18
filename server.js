@@ -17,7 +17,7 @@ app.use(express.json());
 // =============================================================
 // Expose the public directory to access the image 
 // =============================================================
-// app.use(express.static(path.join(__dirname, './app/public')));
+app.use(express.static('./app/public'));
 
 // =============================================================
 // Require the routing modules
@@ -30,4 +30,4 @@ require('./app/routing/htmlRoutes')(app);  // tested successfully to return the 
 // =============================================================
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
-  });
+});
