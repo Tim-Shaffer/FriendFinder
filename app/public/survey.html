@@ -13,7 +13,11 @@
         <!-- Link for Bootstrap Styling -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
+
+        <!-- Link for Bootstrap jQuery library (needed for the modal) -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
         <!-- Link for fontawesome kit -->
         <script src="https://kit.fontawesome.com/728e60b7b4.js" crossorigin="anonymous"></script>
     
@@ -235,6 +239,40 @@
 
             </div>
 
+            <!-- Basics of the Modal from w3schools -->
+            <!-- Modal -->
+            <div class="modal fade" id="friendModal" role="dialog">
+            
+              <div class="modal-dialog modal-dialog-centered">
+
+            
+                <!-- Modal content-->
+                <div class="modal-content">
+            
+                  <div class="modal-header">
+            
+                    <h4 class="modal-title">You were Matched With: </h4>
+            
+                  </div>
+            
+                  <div class="modal-body">
+            
+                    <p>Some text in the modal.</p>
+            
+                  </div>
+            
+                  <div class="modal-footer">
+            
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            
+                  </div>
+            
+                </div>
+
+              </div>
+            
+            </div>
+
             <div class="footer">
 
               <p>
@@ -324,6 +362,9 @@
               function(data) {
     
                 console.log("Data returned is:  " + JSON.stringify(data))
+                
+                // trigger the modal to open with the returned information
+                $("#friendModal").modal();
     
               }
 
