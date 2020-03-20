@@ -382,7 +382,7 @@
 
                 //Grab the result from the AJAX post so that the best match's name and photo are displayed.
                 if (returnedData.name === 'Sheldon Cooper') {
-                  $("#friendName").text("Himself!!! \n" + returnedData.name)
+                  $("#friendName").text("Himself!!!").append("<br><br>" + returnedData.name)
                 } else {
                   $("#friendName").text(returnedData.name)  
                 };

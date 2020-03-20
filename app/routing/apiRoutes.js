@@ -25,7 +25,8 @@ module.exports = function(app) {
         console.log(newFriend);
     
         // testing the response with a random  array entry
-        res.json(friends[Math.floor(Math.random() * 8)]);
+        // res.json(friends[Math.floor(Math.random() * 8)]);
+        res.json(friends[0]);
 
     });
 
