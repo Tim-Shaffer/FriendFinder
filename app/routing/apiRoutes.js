@@ -24,8 +24,8 @@ module.exports = function(app) {
         // test what has been entered and passed to the post!
         console.log(newFriend);
     
-        // respond with the same data that was passed to make sure the AJAX call gets the data correctly.
-        res.json(newFriend);
+        // testing the response with a random  array entry
+        res.json(friends[Math.floor(Math.random() * 8)]);
 
     });
 

@@ -251,7 +251,7 @@
             
                   <div class="modal-header">
             
-                    <h2 class="modal-title">You were Matched With: </h2>
+                    <h2 class="modal-title">Sheldon has matched you with: </h2>
             
                   </div>
             
@@ -260,18 +260,18 @@
                     <!-- basics found at https://mdbootstrap.com/docs/jquery/modals/additional/ -->
                     <div class="row">
                       
-                      <div class="col-5">
+                      <div class="col-7">
                       
-                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(55).jpg"
-                          class="img-fluid" alt="">
+                        <img src=""
+                          class="img-fluid" alt="No Image Found" id="friendPic">
                       
                       </div>
 
-                      <div class="col-7">
+                      <div class="col-5">
                         
-                        <p><strong>Friend Name</strong></p>
+                        <p><strong id="friendName"></strong></p>
                         
-                        <p>Character Description!</p>
+                        <p id="friendDesc"></p>
             
                       </div>
             
@@ -324,15 +324,15 @@
                 
                 var isValid = true;
 
-                // verify the name and image are populated
-                $(".form-control").each(function () {
-                    if ($(this).val() === "") isValid = false;
-                });
+                // // verify the name and image are populated
+                // $(".form-control").each(function () {
+                //     if ($(this).val() === "") isValid = false;
+                // });
 
-                // check each of the questions to make sure an option was selected
-                $(".option-selected").each(function () {
-                    if ($(this).val() === "") isValid = false;
-                });
+                // // check each of the questions to make sure an option was selected
+                // $(".option-selected").each(function () {
+                //     if ($(this).val() === "") isValid = false;
+                // });
 
                 return isValid;
 
@@ -355,7 +355,8 @@
                 $("#q8").val(),
                 $("#q9").val(),
                 $("#q10").val()
-              ]
+              ],
+              isShowCharacter: false
             };
 
             // after populating the information from what was entered, clear the data 
@@ -375,10 +376,26 @@
             // AJAX post the data to the friends API.
             $.post("/api/friends", newFriend, 
             
-              function(data) {
+              function(returnedData) {
     
-                console.log("Data returned is:  " + JSON.stringify(data))
-                
+                console.log("Data returned is:  " + JSON.stringify(returnedData))
+
+                //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                if (returnedData.name === 'Sheldon Cooper') {
+                  $("#friendName").text("Himself!!! \n" + returnedData.name)
+                } else {
+                  $("#friendName").text(returnedData.name)  
+                };
+
+                $("#friendPic").attr("src", returnedData.photo);
+
+                if (returnedData.isShowCharacter) {
+                  $("#friendDesc").text("Bazinga!");
+                } 
+                else {
+                  $("#friendDesc").text("Another Fan of the Show!");
+                };
+              
                 // trigger the modal to open with the returned information
                 $("#friendModal").modal();
     
