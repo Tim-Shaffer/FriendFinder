@@ -18,6 +18,10 @@ module.exports = function(app) {
     app.post("/api/friends", function(req, res) {
 
         var newFriend = req.body;
+
+        // Add the functionality to process the data and determine the best friend match!
+        // Must determine before adding as a friend or else they will match themselves
+        var friendIndex = findBestFriend(newFriend);
     
         friends.push(newFriend);
 
@@ -27,8 +31,7 @@ module.exports = function(app) {
         // testing the response with a random  array entry
         // res.json(friends[Math.floor(Math.random() * 8)]);
         // res.json(friends[0]);
-        // Add the functionality to process the data and determine the best friend match!
-        res.json(friends[findBestFriend(newFriend)]);
+        res.json(friends[friendIndex]);
 
  
     });
