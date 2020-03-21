@@ -8,6 +8,7 @@ const friendsArray = [
     },
     { "name":"Leonard Hofstadter",
     "photo":"https://i.redd.it/pgd8yw5pisuy.png",
+    
     "scores":[ 2, 2, 4, 3, 3, 2, 3, 6, 3, 5],
     "isShowCharacter": true
     },
