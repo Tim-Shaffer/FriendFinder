@@ -26,10 +26,59 @@ module.exports = function(app) {
     
         // testing the response with a random  array entry
         // res.json(friends[Math.floor(Math.random() * 8)]);
-        res.json(friends[0]);
+        // res.json(friends[0]);
+        // Add the functionality to process the data and determine the best friend match!
+        res.json(friends[findBestFriend(newFriend)]);
 
+ 
     });
 
 };
 // =============================================================
 // =============================================================
+
+function findBestFriend(friend) {
+
+    //grabs the new friend's scores values 
+    var newFriendScores = friend.scores;
+
+    // array to hold the differences in the scores
+    var scoresArray = [];
+
+    // variable to hold the index of the friends that has the lowest total differential
+    var bestMatch = 0;
+
+    //loop through all current friends
+    for (i = 0; i < friends.length; i++) {
+        // variable to calculate the difference in each score as a total
+        var scoresDiff = 0;
+
+        //loop through all the scores of all the friends
+        for (j = 0; j < newFriendScores.length; j++) {
+            // difference is calculated as an Absolute of the difference between the new friend and the friend in the list
+            scoresDiff += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(newFriendScores[j])));
+        }
+
+        //push results into scoresArray
+        scoresArray.push(scoresDiff);
+
+    }
+
+    // loop through the array holding the differences to find the index with the lowest value
+    // bestmatch starts at position 0 so the loop only needs to start at position 1
+    for (i = 1; i < scoresArray.length; i++) {
+
+        // if the difference at the looping index is lower the difference at the prior best match 
+        if (scoresArray[i] < scoresArray[bestMatch]) {
+        
+            // the current index is now the new bestmatch
+            bestMatch = i;
+        
+        }
+
+    }
+
+    //return bestMatch data
+    return bestMatch;        
+
+};

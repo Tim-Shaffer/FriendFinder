@@ -324,15 +324,15 @@
                 
                 var isValid = true;
 
-                // // verify the name and image are populated
-                // $(".form-control").each(function () {
-                //     if ($(this).val() === "") isValid = false;
-                // });
+                // verify the name and image are populated
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") isValid = false;
+                });
 
-                // // check each of the questions to make sure an option was selected
-                // $(".option-selected").each(function () {
-                //     if ($(this).val() === "") isValid = false;
-                // });
+                // check each of the questions to make sure an option was selected
+                $(".option-selected").each(function () {
+                    if ($(this).val() === "") isValid = false;
+                });
 
                 return isValid;
 
