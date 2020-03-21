@@ -10,7 +10,7 @@ module.exports = function(app) {
 
     // A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
     app.get("/api/friends", function(req, res) {
-        return res.json(friends);
+        res.json(friends);
     });
 
     // A POST routes /api/friends. This will be used to handle incoming survey results. 
@@ -24,13 +24,8 @@ module.exports = function(app) {
         var friendIndex = findBestFriend(newFriend);
     
         friends.push(newFriend);
-
-        // test what has been entered and passed to the post!
-        console.log(newFriend);
     
-        // testing the response with a random  array entry
-        // res.json(friends[Math.floor(Math.random() * 8)]);
-        // res.json(friends[0]);
+        // respond with the data for the friend with the best match
         res.json(friends[friendIndex]);
 
  
