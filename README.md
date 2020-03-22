@@ -45,6 +45,8 @@ The app is deployed to **HEROKU** at the following link:
 
     ![Screenshot for the Survey Page](/app/public/assets/images/initial_survey.jpg)
 
+    * *Scroll to the rest of the questions.*
+
     ![Screenshot for the Survey Page](/app/public/assets/images/final_survey.jpg)
 
 1. Clicking the **Submit** button will post the answers and calculate the results causing a Modal to pop up with your match!
