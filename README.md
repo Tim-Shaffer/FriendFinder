@@ -1,5 +1,5 @@
 # FriendFinder
-What Bib Bang Theory character is most like you?  Answer some questions and see who best matches with you!
+What Big Bang Theory character is most like you?  Answer some questions and see who best matches with you!
 
 This project is a full-stack site, that will survey users and take the answers to process.  The app will compare the answers with those from characters and other users to see who best matches. The app will then display the name and picture of the *'friend'* with the best overall match.  
 
