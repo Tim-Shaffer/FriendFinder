@@ -34,3 +34,25 @@ The app is deployed to **HEROKU** at the following link:
     * The `htmlRoutes.js` file defines the *`GET`* route to the `survey.html` file as well as a *'catch-all'* route to the `home.html` homepage.
     * The `apiRoutes.js` file processes a *`GET`* route and displays the contents of the `friendsArray` as built in the `friends.js` constructor file and added onto with surveys being taken.  
     * The `apiRoutes.js` file also processes a *`POST`* route handling the incoming survey data and calling the `findBestFriend()` function to handle the compatibility logic.
+
+### Description
+
+1. Clicking the **HEROKU** link -  - will take you to the Home Page.
+
+    ![Screenshot for starting the app](/app/public/assets/images/home.jpg)
+
+1. Clicking the **Take the Survey** button will take you to the Survey Page.
+
+    ![Screenshot for the Survey Page](/app/public/assets/images/initial_survey.jpg)
+
+    ![Screenshot for the Survey Page](/app/public/assets/images/final_survey.jpg)
+
+1. Clicking the **Submit** button will post the answers and calculate the results causing a Modal to pop up with your match!
+
+    ![Screenshot for the Results Page](/app/public/assets/images/reults_modal.jpg)
+
+1. Clicking the **API Friends List** link will direct the router to show the current list of friend objects.  *Below is a sample screenshot:*
+
+    ![Screenshot for sample of the friendsArray](/app/public/assets/images/sample_friends_array.jpg)
+
+1. Clicking the **GitHub Repo** link will direct you to this GitHub Repository.  
