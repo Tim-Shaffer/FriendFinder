@@ -51,6 +51,10 @@ The app is deployed to **HEROKU** at the following link:
 
     ![Screenshot for the Results Page](/app/public/assets/images/results_modal.jpg)
 
+1. If you Click the **Submit** button without having answered all of the questions, an alert will pop-up notifying you to fill out all the fields before submitting.
+
+    ![Screenshot for the Results Page](/app/public/assets/images/alert.jpg)
+
 1. Clicking the **API Friends List** link will direct the router to show the current list of friend objects.  *Below is a sample screenshot:*
 
     ![Screenshot for sample of the friendsArray](/app/public/assets/images/sample_friends_array.jpg)
