@@ -49,7 +49,7 @@ The app is deployed to **HEROKU** at the following link:
 
 1. Clicking the **Submit** button will post the answers and calculate the results causing a Modal to pop up with your match!
 
-    ![Screenshot for the Results Page](/app/public/assets/images/reults_modal.jpg)
+    ![Screenshot for the Results Page](/app/public/assets/images/results_modal.jpg)
 
 1. Clicking the **API Friends List** link will direct the router to show the current list of friend objects.  *Below is a sample screenshot:*
 
