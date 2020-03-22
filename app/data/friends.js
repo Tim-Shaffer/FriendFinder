@@ -1,5 +1,6 @@
-// You should save your application's data inside of app/data/friends.js as an array of objects. Each of these objects should roughly follow the format below.
-
+// =================================================================
+//  build a friendsArray constructor 
+// =================================================================
 const friendsArray = [
     { "name":"Sheldon Cooper",
     "photo":"https://www.writeups.org/wp-content/uploads/Sheldon-Cooper-Big-Bang-Theory-Jim-Parson-m.jpg",
@@ -44,4 +45,7 @@ const friendsArray = [
     }
 ]
 
+// =============================================================================
+// Export the friendsArray constructor so that it can be accessed in other files
+// =============================================================================
 module.exports = friendsArray;
