@@ -3,8 +3,17 @@ What Big Bang Theory character is most like you?  Answer some questions and see 
 
 This project is a full-stack site, that will survey users and take the answers to process.  The app will compare the answers with those from characters and other users to see who best matches. The app will then display the name and picture of the *'friend'* with the best overall match.  
 
+
 # Author 
 > Tim Shaffer
+
+
+## Contents
+* [Deployment](https://github.com/Tim-Shaffer/FriendFinder#deployment)
+* [Tech Used](https://github.com/Tim-Shaffer/FriendFinder#tech-used)
+* [App Organization](https://github.com/Tim-Shaffer/FriendFinder#app-organization)
+* [Description](https://github.com/Tim-Shaffer/FriendFinder#description)
+
 
 # Deployment
 The app is deployed to **HEROKU** at the following link: 
