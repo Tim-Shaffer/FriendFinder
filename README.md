@@ -16,7 +16,7 @@ This project is a full-stack site, that will survey users and take the answers t
 
 
 # Deployment
-The app is deployed to **HEROKU** at the following link: 
+The app is deployed to **HEROKU** at the following link:  https://tim-shaffer-friendfinder.herokuapp.com/
 
 ## Tech Used
 
